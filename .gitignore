@@ -1,0 +1,49 @@
+*.pydevproject
+.project
+.metadata
+.mymetadata
+bin/**
+tmp/**
+tmp/**/*
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.classpath
+.settings/
+.loadpath
+
+# External tool builders
+.externalToolBuilders/
+
+# Locally stored "Eclipse launch configurations"
+*.launch
+
+# CDT-specific
+.cproject
+
+# PDT-specific
+.buildpath
+
+# build path
+target/
+
+# osx
+.DS_Store
+
+# sass
+.sass-cache
+
+#codekit
+codekit-config.json
+
+# Intellij IDEA
+.idea/**
+.idea/**/*
+*.iml
+*.iws
+
+# node
+node_modules/
+/bin
