@@ -1,6 +1,6 @@
 # grunt-css-parse
 
-> Grunt plugin for css parse (https://github.com/visionmedia/css-parse).
+> Grunt plugin for css parse (https://npmjs.org/package/css-parse).
 
 ## Getting Started
 This plugin requires Grunt `~0.4.1`
@@ -30,8 +30,8 @@ grunt.initConfig({
     },
     your_target: {
       // Target-specific file lists and/or options go here.
-    },
-  },
+    }
+  }
 });
 ```
 
@@ -57,10 +57,11 @@ In this example, the default options are used.
 ```js
 grunt.initConfig({
   css_parse: {
-    options: {},
-    files: {
-      'dest/default_options.json': ['src/default_options.css']
-    }
+    dist: {
+	  files: {
+	    'dest/custom_options': ['src/custom_options.css']
+	  }
+	}
   }
 });
 ```
@@ -85,12 +86,14 @@ In this example, custom options are used.
 grunt.initConfig({
   css_parse: {
     options: {
-      space: 4,
-      position: true,
+  	  space: 4,
+	  position: true
     },
-    files: {
-      'dest/custom_options': ['src/custom_options.css']
-    }
+    dist: {
+	  files: {
+	    'dest/custom_options': ['src/custom_options.css']
+	  }
+	}
   }
 });
 ```
