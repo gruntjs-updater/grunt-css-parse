@@ -48,7 +48,7 @@ module.exports = function( grunt ) {
 			},
 			custom_options_indent: {
 				options: {
-					indent: 4
+					space: 4
 				},
 				files: {
 					'tmp/custom_options_indent.json': ['test/fixtures/test.css']
@@ -56,7 +56,7 @@ module.exports = function( grunt ) {
 			},
 			custom_options_indent_position: {
 				options: {
-					indent: 4,
+					space: 4,
 					position: true
 				},
 				files: {

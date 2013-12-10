@@ -17,7 +17,7 @@ module.exports = function( grunt ) {
 
 	grunt.registerMultiTask( 'css_parse', 'Plugin for css parse (https://github.com/visionmedia/css-parse).', function() {
 		var options = this.options();
-		var indent = options.indent || 0;
+		var space = options.space || null;
 		var hasPosition = options.position || false;
 
 		//console.log( "options:", options );
@@ -41,7 +41,7 @@ module.exports = function( grunt ) {
 			var output = parse(grunt.file.read( src ), { position: hasPosition });
 
 			// write JSON
-			grunt.file.write( file.dest, JSON.stringify( output, null, indent ) );
+			grunt.file.write( file.dest, JSON.stringify( output, null, space ) );
 
 			grunt.log.writeln( 'File "' + file.dest + '" created.' );
 
