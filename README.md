@@ -59,7 +59,7 @@ grunt.initConfig({
   css_parse: {
     dist: {
 	  files: {
-	    'dest/custom_options': ['src/custom_options.css']
+	    'dest/custom_options': 'src/custom_options.css'
 	  }
 	}
   }
@@ -91,7 +91,7 @@ grunt.initConfig({
     },
     dist: {
 	  files: {
-	    'dest/custom_options': ['src/custom_options.css']
+	    'dest/custom_options': 'src/custom_options.css'
 	  }
 	}
   }
