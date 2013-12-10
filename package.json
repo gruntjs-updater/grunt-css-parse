@@ -5,19 +5,19 @@
 	"homepage": "https://github.com/bgu/grunt-css-parse",
 	"author": {
 		"name": "Bastian Gutschke",
-		"email": "bastian.gutschke@gmx.de"
+		"email": "bastian.gutschke@unitb-consulting.de"
 	},
 	"repository": {
 		"type": "git",
-		"url": "git://github.com/bgu/grunt-css-parse.git"
+		"url": "git://github.com/unitb-consulting/grunt-css-parse.git"
 	},
 	"bugs": {
-		"url": "https://github.com/bgu/grunt-css-parse/issues"
+		"url": "https://github.com/unitb-consulting/grunt-css-parse/issues"
 	},
 	"licenses": [
 		{
 			"type": "MIT",
-			"url": "https://github.com/bgu/grunt-css-parse/blob/master/LICENSE-MIT"
+			"url": "https://github.com/unitb-consulting/grunt-css-parse/blob/master/LICENSE-MIT"
 		}
 	],
 	"main": "Gruntfile.js",
