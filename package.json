@@ -1,7 +1,7 @@
 {
 	"name": "grunt-css-parse",
 	"description": "Grunt plugin for css parse (https://github.com/visionmedia/css-parse).",
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"homepage": "https://github.com/bgu/grunt-css-parse",
 	"author": {
 		"name": "Bastian Gutschke",
