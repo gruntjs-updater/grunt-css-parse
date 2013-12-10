@@ -8,43 +8,44 @@
 
 'use strict';
 
-module.exports = function(grunt) {
+var parse = require('css-parse');
 
-  // Please see the Grunt documentation for more information regarding task
-  // creation: http://gruntjs.com/creating-tasks
+module.exports = function( grunt ) {
 
-  grunt.registerMultiTask('css_parse', 'Grunt plugin for css parse (https://github.com/visionmedia/css-parse).', function() {
-    // Merge task-specific and/or target-specific options with these defaults.
-    var options = this.options({
-      punctuation: '.',
-      separator: ', '
-    });
+	// Please see the Grunt documentation for more information regarding task
+	// creation: http://gruntjs.com/creating-tasks
 
-    // Iterate over all specified file groups.
-    this.files.forEach(function(f) {
-      // Concat specified files.
-      var src = f.src.filter(function(filepath) {
-        // Warn on and remove invalid source files (if nonull was set).
-        if (!grunt.file.exists(filepath)) {
-          grunt.log.warn('Source file "' + filepath + '" not found.');
-          return false;
-        } else {
-          return true;
-        }
-      }).map(function(filepath) {
-        // Read file source.
-        return grunt.file.read(filepath);
-      }).join(grunt.util.normalizelf(options.separator));
+	grunt.registerMultiTask( 'css_parse', 'Plugin for css parse (https://github.com/visionmedia/css-parse).', function() {
+		var options = this.options();
+		var indent = options.indent || 0;
+		var hasPosition = options.position || false;
 
-      // Handle options.
-      src += options.punctuation;
+		//console.log( "options:", options );
 
-      // Write the destination file.
-      grunt.file.write(f.dest, src);
+		// Iterate over all specified file groups.
+		this.files.forEach( function( file ) {
 
-      // Print a success message.
-      grunt.log.writeln('File "' + f.dest + '" created.');
-    });
-  });
+			var src = file.src[0];
+
+			if ( typeof src !== 'string' ) {
+				src = file.orig.src[0];
+			}
+
+			// check for src file
+			if ( !grunt.file.exists( src ) ) {
+				grunt.log.warn( 'Source file "' + src + '" not found.' );
+				return;
+			}
+
+			// generate JSON
+			var output = parse(grunt.file.read( src ), { position: hasPosition });
+
+			// write JSON
+			grunt.file.write( file.dest, JSON.stringify( output, null, indent ) );
+
+			grunt.log.writeln( 'File "' + file.dest + '" created.' );
+
+		} );
+	} );
 
 };
