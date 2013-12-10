@@ -37,50 +37,131 @@ grunt.initConfig({
 
 ### Options
 
-#### options.separator
+#### options.space
 Type: `String`
-Default value: `',  '`
+Default value: null
 
-A string value that is used to do something with whatever.
+A String or Number object that's used to insert white space into the output JSON string for readability purposes. If this is a Number, it indicates the number of space characters to use as white space; this number is capped at 10 if it's larger than that. Values less than 1 indicate that no space should be used. If this is a String, the string (or the first 10 characters of the string, if it's longer than that) is used as white space. If this parameter is not provided (or is null), no white space is used.
 
-#### options.punctuation
-Type: `String`
-Default value: `'.'`
+#### options.position
+Type: `Boolean`
+Default value: `false`
 
-A string value that is used to do something else with whatever else.
+Add the corresponding position in the css source file to each node.
 
 ### Usage Examples
 
 #### Default Options
-In this example, the default options are used to do something with whatever. So if the `testing` file has the content `Testing` and the `123` file had the content `1 2 3`, the generated result would be `Testing, 1 2 3.`
+In this example, the default options are used.
 
 ```js
 grunt.initConfig({
   css_parse: {
     options: {},
     files: {
-      'dest/default_options': ['src/testing', 'src/123'],
-    },
-  },
+      'dest/default_options.json': ['src/default_options.css']
+    }
+  }
 });
 ```
 
+Input:
+```css
+body {
+    background: #eee;
+    color: #888;
+}
+```
+
+Output:
+```js
+{"type":"stylesheet","stylesheet":{"rules":[{"type":"rule","selectors":["body"],"declarations":[{"type":"declaration","property":"background","value":"#eee"},{"type":"declaration","property":"color","value":"#888"}]}]}}
+```
+
 #### Custom Options
-In this example, custom options are used to do something else with whatever else. So if the `testing` file has the content `Testing` and the `123` file had the content `1 2 3`, the generated result in this case would be `Testing: 1 2 3 !!!`
+In this example, custom options are used.
 
 ```js
 grunt.initConfig({
   css_parse: {
     options: {
-      separator: ': ',
-      punctuation: ' !!!',
+      space: 4,
+      position: true,
     },
     files: {
-      'dest/default_options': ['src/testing', 'src/123'],
-    },
-  },
+      'dest/custom_options': ['src/custom_options.css']
+    }
+  }
 });
 ```
+
+Input:
+```css
+body {
+    background: #eee;
+    color: #888;
+}
+```
+
+Output:
+```js
+{
+    "type": "stylesheet",
+    "stylesheet": {
+        "rules": [
+            {
+                "type": "rule",
+                "selectors": [
+                    "body"
+                ],
+                "declarations": [
+                    {
+                        "type": "declaration",
+                        "property": "background",
+                        "value": "#eee",
+                        "position": {
+                            "start": {
+                                "line": 2,
+                                "column": 5
+                            },
+                            "end": {
+                                "line": 2,
+                                "column": 21
+                            }
+                        }
+                    },
+                    {
+                        "type": "declaration",
+                        "property": "color",
+                        "value": "#888",
+                        "position": {
+                            "start": {
+                                "line": 3,
+                                "column": 5
+                            },
+                            "end": {
+                                "line": 3,
+                                "column": 16
+                            }
+                        }
+                    }
+                ],
+                "position": {
+                    "start": {
+                        "line": 1,
+                        "column": 1
+                    },
+                    "end": {
+                        "line": 4,
+                        "column": 2
+                    }
+                }
+            }
+        ]
+    }
+}
+```
+
 
 ## Contributing
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
