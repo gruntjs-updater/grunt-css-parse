@@ -35,7 +35,7 @@ module.exports = function( grunt ) {
 
 				},
 				files: {
-					'tmp/default_options.json': ['test/fixtures/test.css']
+					'tmp/default_options.json': ['test/fixtures/small.css']
 				}
 			},
 			custom_options_position: {
@@ -43,7 +43,7 @@ module.exports = function( grunt ) {
 					position: true
 				},
 				files: {
-					'tmp/custom_options_position.json': ['test/fixtures/test.css']
+					'tmp/custom_options_position.json': ['test/fixtures/small.css']
 				}
 			},
 			custom_options_indent: {
@@ -51,7 +51,7 @@ module.exports = function( grunt ) {
 					space: 4
 				},
 				files: {
-					'tmp/custom_options_indent.json': ['test/fixtures/test.css']
+					'tmp/custom_options_indent.json': ['test/fixtures/small.css']
 				}
 			},
 			custom_options_indent_position: {
@@ -60,7 +60,16 @@ module.exports = function( grunt ) {
 					position: true
 				},
 				files: {
-					'tmp/custom_options_indent_position.json': ['test/fixtures/test.css']
+					'tmp/custom_options_indent_position.json': ['test/fixtures/small.css']
+				}
+			},
+			custom_options_indent_position_large: {
+				options: {
+					space: 4,
+					position: true
+				},
+				files: {
+					'tmp/custom_options_indent_position_large.json': ['test/fixtures/large.css']
 				}
 			}
 		},
