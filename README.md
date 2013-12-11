@@ -58,10 +58,10 @@ In this example, the default options are used.
 grunt.initConfig({
   css_parse: {
     dist: {
-	  files: {
-	    'dest/custom_options': 'src/custom_options.css'
-	  }
-	}
+      files: {
+        'dest/custom_options': 'src/custom_options.css'
+      }
+    }
   }
 });
 ```
@@ -86,14 +86,14 @@ In this example, custom options are used.
 grunt.initConfig({
   css_parse: {
     options: {
-  	  space: 4,
-	  position: true
+      space: 4,
+      position: true
     },
     dist: {
-	  files: {
-	    'dest/custom_options': 'src/custom_options.css'
-	  }
-	}
+      files: {
+        'dest/custom_options': 'src/custom_options.css'
+      }
+    }
   }
 });
 ```
@@ -170,8 +170,9 @@ Output:
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
 
 ## Release History
- * 2013-12-10   v0.1.1   Updated README.
- * 2013-12-10   v0.1.0   Initial release.
+ * 2013-12-11   v0.1.2  Minor fixes.
+ * 2013-12-10   v0.1.1  Updated README.
+ * 2013-12-10   v0.1.0  Initial release.
 
 
 
