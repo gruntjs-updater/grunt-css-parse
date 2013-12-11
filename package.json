@@ -5,7 +5,8 @@
 	"homepage": "https://github.com/unitb-consulting/grunt-css-parse",
 	"author": {
 		"name": "Bastian Gutschke",
-		"email": "bastian.gutschke@unitb-consulting.de"
+		"email": "bastian.gutschke@unitb-consulting.de",
+        "url": "http://www.unitb-consulting.de"
 	},
 	"repository": {
 		"type": "git",
