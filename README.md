@@ -59,7 +59,7 @@ grunt.initConfig({
   css_parse: {
     dist: {
       files: {
-        'dest/custom_options': 'src/custom_options.css'
+        'dest/custom_options': ['src/custom_options.css']
       }
     }
   }
@@ -91,7 +91,7 @@ grunt.initConfig({
     },
     dist: {
       files: {
-        'dest/custom_options': 'src/custom_options.css'
+        'dest/custom_options': ['src/custom_options.css']
       }
     }
   }
@@ -170,6 +170,7 @@ Output:
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
 
 ## Release History
+ * 2013-12-14   v0.2.0  Added multiple source file support.
  * 2013-12-11   v0.1.2  Minor fixes.
  * 2013-12-10   v0.1.1  Updated README.
  * 2013-12-10   v0.1.0  Initial release.

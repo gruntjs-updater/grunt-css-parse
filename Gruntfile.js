@@ -32,15 +32,20 @@ module.exports = function( grunt ) {
 		css_parse: {
 			default_options: {
 				files: {
-					'tmp/default_options.json': ['test/fixtures/small.css']
+					'tmp/default_options.json': 'test/fixtures/small.css'
 				}
 			},
+            default_options_multifile: {
+                files: {
+                    'tmp/default_options_multifile.json': ['test/fixtures/small.css', 'test/fixtures/large.css']
+                }
+            },
 			custom_options_position: {
 				options: {
 					position: true
 				},
 				files: {
-					'tmp/custom_options_position.json': ['test/fixtures/small.css']
+					'tmp/custom_options_position.json': 'test/fixtures/small.css'
 				}
 			},
             custom_options_position_source: {
@@ -49,7 +54,7 @@ module.exports = function( grunt ) {
 					source: true
 				},
 				files: {
-					'tmp/custom_options_position_source.json': ['test/fixtures/small.css']
+					'tmp/custom_options_position_source.json': 'test/fixtures/small.css'
 				}
 			},
 			custom_options_indent: {
@@ -57,7 +62,7 @@ module.exports = function( grunt ) {
 					space: 4
 				},
 				files: {
-					'tmp/custom_options_indent.json': ['test/fixtures/small.css']
+					'tmp/custom_options_indent.json': 'test/fixtures/small.css'
 				}
 			},
 			custom_options_indent_position: {
@@ -66,7 +71,7 @@ module.exports = function( grunt ) {
 					position: true
 				},
 				files: {
-					'tmp/custom_options_indent_position.json': ['test/fixtures/small.css']
+					'tmp/custom_options_indent_position.json': 'test/fixtures/small.css'
 				}
 			},
             custom_options_indent_position_source: {
@@ -76,7 +81,17 @@ module.exports = function( grunt ) {
                     source: true
                 },
                 files: {
-                    'tmp/custom_options_indent_position_source.json': ['test/fixtures/small.css']
+                    'tmp/custom_options_indent_position_source.json': 'test/fixtures/small.css'
+                }
+            },
+            custom_options_indent_position_source_multifile: {
+                options: {
+                    space: 4,
+                    position: true,
+                    source: true
+                },
+                files: {
+                    'tmp/custom_options_indent_position_source_multifile.json': ['test/fixtures/small.css', 'test/fixtures/large.css']
                 }
             },
 			custom_options_indent_position_large: {
@@ -85,7 +100,7 @@ module.exports = function( grunt ) {
 					position: true
 				},
 				files: {
-					'tmp/custom_options_indent_position_large.json': ['test/fixtures/large.css']
+					'tmp/custom_options_indent_position_large.json': 'test/fixtures/large.css'
 				}
 			}
 		},
