@@ -43,7 +43,9 @@
 	"keywords": [
 		"gruntplugin",
 		"parse",
+		"parser",
 		"css",
-		"json"
+		"json",
+        "stylesheet"
 	]
 }
