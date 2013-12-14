@@ -1,0 +1,58 @@
+{
+    "type": "stylesheet",
+    "stylesheet": {
+        "rules": [
+            {
+                "type": "rule",
+                "selectors": [
+                    "body"
+                ],
+                "declarations": [
+                    {
+                        "type": "declaration",
+                        "property": "background",
+                        "value": "#eee",
+                        "position": {
+                            "start": {
+                                "line": 2,
+                                "column": 5
+                            },
+                            "end": {
+                                "line": 2,
+                                "column": 21
+                            },
+                            "source": "test/fixtures/small.css"
+                        }
+                    },
+                    {
+                        "type": "declaration",
+                        "property": "color",
+                        "value": "#888",
+                        "position": {
+                            "start": {
+                                "line": 3,
+                                "column": 5
+                            },
+                            "end": {
+                                "line": 3,
+                                "column": 16
+                            },
+                            "source": "test/fixtures/small.css"
+                        }
+                    }
+                ],
+                "position": {
+                    "start": {
+                        "line": 1,
+                        "column": 1
+                    },
+                    "end": {
+                        "line": 4,
+                        "column": 2
+                    },
+                    "source": "test/fixtures/small.css"
+                }
+            }
+        ]
+    }
+}

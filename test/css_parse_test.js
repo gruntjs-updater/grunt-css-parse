@@ -32,7 +32,7 @@ exports.css_parse = {
 
 		var actual = grunt.file.read( 'tmp/default_options.json' );
 		var expected = grunt.file.read( 'test/expected/default_options.json' );
-		test.equal( actual, expected, 'should describe what the default behavior is.' );
+		test.equal( actual, expected, 'Should describe what the default behavior is.' );
 
 		test.done();
 	},
@@ -41,16 +41,25 @@ exports.css_parse = {
 
 		var actual = grunt.file.read( 'tmp/custom_options_position.json' );
 		var expected = grunt.file.read( 'test/expected/custom_options_position.json' );
-		test.equal( actual, expected, 'should describe what the custom option(s) behavior is.' );
+		test.equal( actual, expected, 'Should have had the position in the generated json.' );
 
 		test.done();
 	},
+    custom_options_position_source: function( test ) {
+        test.expect( 1 );
+
+        var actual = grunt.file.read( 'tmp/custom_options_position_source.json' );
+        var expected = grunt.file.read( 'test/expected/custom_options_position_source.json' );
+        test.equal( actual, expected, 'Should have had the position and source in the json.' );
+
+        test.done();
+    },
 	custom_options_indent: function( test ) {
 		test.expect( 1 );
 
 		var actual = grunt.file.read( 'tmp/custom_options_indent.json' );
 		var expected = grunt.file.read( 'test/expected/custom_options_indent.json' );
-		test.equal( actual, expected, 'should describe what the custom option(s) behavior is.' );
+		test.equal( actual, expected, 'Should have had indented the json.' );
 
 		test.done();
 	},
@@ -59,16 +68,25 @@ exports.css_parse = {
 
 		var actual = grunt.file.read( 'tmp/custom_options_indent_position.json' );
 		var expected = grunt.file.read( 'test/expected/custom_options_indent_position.json' );
-		test.equal( actual, expected, 'should describe what the custom option(s) behavior is.' );
+		test.equal( actual, expected, 'Should have had the position in the indented json.' );
 
 		test.done();
 	},
+    custom_options_indent_position_source: function( test ) {
+        test.expect( 1 );
+
+        var actual = grunt.file.read( 'tmp/custom_options_indent_position_source.json' );
+        var expected = grunt.file.read( 'test/expected/custom_options_indent_position_source.json' );
+        test.equal( actual, expected, 'Should have had the position and source in the indented json.' );
+
+        test.done();
+    },
 	custom_options_indent_position_large: function( test ) {
 		test.expect( 1 );
 
 		var actual = grunt.file.read( 'tmp/custom_options_indent_position_large.json' );
 		var expected = grunt.file.read( 'test/expected/custom_options_indent_position_large.json' );
-		test.equal( actual, expected, 'should describe what the custom option(s) behavior is.' );
+		test.equal( actual, expected, 'Should have had the position in the indented json.' );
 
 		test.done();
 	}

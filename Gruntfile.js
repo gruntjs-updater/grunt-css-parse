@@ -31,9 +31,6 @@ module.exports = function( grunt ) {
 		// Configuration to be run (and then tested).
 		css_parse: {
 			default_options: {
-				options: {
-
-				},
 				files: {
 					'tmp/default_options.json': ['test/fixtures/small.css']
 				}
@@ -44,6 +41,15 @@ module.exports = function( grunt ) {
 				},
 				files: {
 					'tmp/custom_options_position.json': ['test/fixtures/small.css']
+				}
+			},
+            custom_options_position_source: {
+				options: {
+                    position: true,
+					source: true
+				},
+				files: {
+					'tmp/custom_options_position_source.json': ['test/fixtures/small.css']
 				}
 			},
 			custom_options_indent: {
@@ -63,6 +69,16 @@ module.exports = function( grunt ) {
 					'tmp/custom_options_indent_position.json': ['test/fixtures/small.css']
 				}
 			},
+            custom_options_indent_position_source: {
+                options: {
+                    space: 4,
+                    position: true,
+                    source: true
+                },
+                files: {
+                    'tmp/custom_options_indent_position_source.json': ['test/fixtures/small.css']
+                }
+            },
 			custom_options_indent_position_large: {
 				options: {
 					space: 4,

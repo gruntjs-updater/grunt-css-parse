@@ -16,11 +16,11 @@ module.exports = function( grunt ) {
 	// creation: http://gruntjs.com/creating-tasks
 
 	grunt.registerMultiTask( 'css_parse', 'Plugin for css parse (https://github.com/visionmedia/css-parse).', function() {
-		var options = this.options();
-		var space = options.space || null;
-		var hasPosition = options.position || false;
-
-		//console.log( "options:", options );
+		var options = this.options(),
+            space = options.space || null,
+            addPosition = options.position || false,
+            addSource = options.source || false,
+            output;
 
 		// Iterate over all specified file groups.
 		this.files.forEach( function( file ) {
@@ -37,8 +37,22 @@ module.exports = function( grunt ) {
 				return;
 			}
 
+            // check if options.source is true, without position being true
+            if ( addSource && !addPosition ) {
+                grunt.log.warn( 'Source option set without position option.' );
+                return;
+            }
+
 			// generate JSON
-			var output = parse(grunt.file.read( src ), { position: hasPosition });
+            if ( addPosition && addSource ) {
+                output = parse(grunt.file.read( src ), { position: addPosition, source: src });
+            }
+            else if ( addPosition ) {
+                output = parse(grunt.file.read( src ), { position: addPosition });
+            }
+            else {
+                output = parse( grunt.file.read( src ) );
+            }
 
 			// write JSON
 			grunt.file.write( file.dest, JSON.stringify( output, null, space ) );
