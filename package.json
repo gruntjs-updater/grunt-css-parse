@@ -6,7 +6,7 @@
 	"author": {
 		"name": "Bastian Gutschke",
 		"email": "bastian.gutschke@unitb-consulting.de",
-        "url": "http://www.unitb-consulting.de"
+		"url": "http://www.unitb-consulting.de"
 	},
 	"repository": {
 		"type": "git",
@@ -38,7 +38,7 @@
 		"grunt": "~0.4.1"
 	},
 	"peerDependencies": {
-		"grunt": "~0.4.1"
+		"grunt": ">=0.4.0"
 	},
 	"keywords": [
 		"gruntplugin",
@@ -46,6 +46,6 @@
 		"parser",
 		"css",
 		"json",
-        "stylesheet"
+		"stylesheet"
 	]
 }
